@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Brew & Bloom</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .admin-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .admin-login {
+            max-width: 420px;
+            margin: 70px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px #00000012;
+        }
+
+        .admin-login h2 {
+            margin-bottom: 20px;
+        }
+
+        .admin-login input {
+            width: 100%;
+            padding: 13px;
+            margin: 8px 0 18px;
+            border: 1px solid #d8cec3;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        .admin-login button,
+        .logout-btn {
+            padding: 11px 20px;
+            background: #536b45;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #forgot-password-button {
+            display: block;
+            margin-top: 15px;
+            background: transparent;
+            color: #536b45;
+            padding: 5px 0;
+            text-decoration: underline;
+        }
+
+        .admin-header {
+            margin-bottom: 30px;
+        }
+
+        .admin-header h1 {
+            color: #30251f;
+        }
+
+        .admin-stats {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px #00000010;
+        }
+
+        .booking-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .booking-table th,
+        .booking-table td {
+            padding: 14px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .booking-table th {
+            background: #f5eee6;
+        }
+
+        .delete-btn {
+            background: #a94442;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        #empty-message,
+        #login-message {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #dashboard-section {
+            display: none;
+        }
+
+        .dashboard-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .dashboard-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="admin-container">
+
+        <!-- Admin Login -->
+        <section class="admin-login" id="login-section">
+
+            <h1>Brew & Bloom.</h1>
+            <h2>Admin Login</h2>
+
+            <form id="login-form">
+
+                <label for="admin-email">Email Address</label>
+                <input
+                    type="email"
+                    id="admin-email"
+                    placeholder="Enter admin email"
+                    required>
+
+                <label for="admin-password">Password</label>
+                <input
+                    type="password"
+                    id="admin-password"
+                    placeholder="Enter admin password"
+                    required>
+
+                <button type="submit" id="login-button">
+                    Login
+                </button>
+
+            </form>
+
+            <button type="button" id="forgot-password-button">
+                Forgot Password?
+            </button>
+
+            <p id="login-message"></p>
+
+            <p>
+                <a href="index.html">← Back to Website</a>
+            </p>
+
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="dashboard-section">
+
+            <div class="dashboard-top">
+
+                <div class="admin-header">
+                    <h1>Brew & Bloom</h1>
+                    <h2>Admin Dashboard</h2>
+                    <p>Manage customer reservations</p>
+                </div>
+
+                <button class="logout-btn" id="logout-button">
+                    Logout
+                </button>
+
+            </div>
+
+            <div class="admin-stats">
+                <h3>Total Reservations</h3>
+                <h1 id="total-bookings">0</h1>
+            </div>
+
+            <h2>Customer Bookings</h2>
+
+            <div class="table-wrapper">
+
+                <table class="booking-table">
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="booking-list"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="empty-message"></p>
+
+            <p style="margin-top: 25px;">
+                <a href="index.html">← Back to Website</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

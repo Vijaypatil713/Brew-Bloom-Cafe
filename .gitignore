@@ -1,0 +1,6 @@
+# Supabase credentials
+js/supabase-config.js
+
+# Other sensitive files
+.env
+.env.local

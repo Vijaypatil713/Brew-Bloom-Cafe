@@ -1,0 +1,527 @@
+
+/* =====================================
+   1. GENERAL RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #faf8f3;
+    color: #30251f;
+    line-height: 1.6;
+}
+
+h1, h2, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =====================================
+   2. NAVIGATION
+===================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #fffdf9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.logo span,
+.hero h1 span {
+    color: #a46b42;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: #a46b42;
+}
+
+.nav-btn,
+.primary-btn {
+    background: #795238;
+    color: white;
+    padding: 13px 23px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #795238;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 70px 8%;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.subtitle {
+    color: #a46b42;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 480px;
+    color: #756b63;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    border: 1px solid #795238;
+    padding: 12px 22px;
+    border-radius: 5px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 150px 150px 8px 8px;
+}
+
+/* =====================================
+   4. GENERAL SECTIONS
+===================================== */
+
+.about,
+.menu,
+.gallery,
+.reservation {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.about {
+    background: #f0e9df;
+}
+
+.about h2,
+.menu h2,
+.gallery h2,
+.reservation h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.about > p:last-child {
+    max-width: 750px;
+    margin: auto;
+    color: #756b63;
+}
+
+/* =====================================
+   5. MENU SECTION
+===================================== */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.menu-card {
+    background: #fffdf9;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card .menu-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.menu-card:hover .menu-image {
+    transform: scale(1.04);
+}
+
+.menu-details {
+    padding: 20px;
+}
+
+.menu-details h3 {
+    margin-bottom: 8px;
+    color: #30251f;
+    font-size: 20px;
+}
+
+.menu-details p {
+    color: #756b63;
+    font-size: 14px;
+}
+
+.menu-details h4 {
+    color: #a46b42;
+    font-weight: 700;
+    margin-top: 12px;
+    font-size: 17px;
+}
+
+/* Menu Category Filters */
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.filter-btn {
+    padding: 11px 25px;
+    border: 1px solid #795238;
+    background: transparent;
+    color: #795238;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #795238;
+    color: white;
+}
+
+/* =====================================
+   6. GALLERY SECTION
+===================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* =====================================
+   7. RESERVATION SECTION
+===================================== */
+
+.reservation {
+    background: #f0e9df;
+}
+
+#reservation-form {
+    max-width: 550px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+    text-align: left;
+}
+
+#reservation-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #30251f;
+    margin-bottom: -8px;
+}
+
+#reservation-form input,
+#reservation-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #30251f;
+    background: #fffdf9;
+}
+
+#reservation-form input:focus,
+#reservation-form textarea:focus {
+    outline: 2px solid #a46b42;
+    border-color: #a46b42;
+}
+
+#reservation-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Date and Time Fields */
+
+.date-time-field {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.date-time-field span {
+    display: block;
+    color: #756b63;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.date-time-field input[type="date"],
+.date-time-field input[type="time"] {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    padding: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: #30251f;
+    background-color: #fffdf9;
+    border: 1px solid #d8cec3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    -webkit-appearance: auto;
+    appearance: auto;
+}
+
+.date-time-field input[type="date"]:focus,
+.date-time-field input[type="time"]:focus {
+    outline: 2px solid #a46b42;
+    border-color: #a46b42;
+}
+
+/* Reservation Success Message */
+
+#form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    color: #397348;
+    transition: all 0.3s ease;
+}
+
+#form-message:not(:empty) {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+/* =====================================
+   8. FOOTER
+===================================== */
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #30251f;
+    color: white;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+/* =====================================
+   9. MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fffdf9;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 22px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    /* Hero */
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 5%;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+
+    /* Sections */
+
+    .about,
+    .menu,
+    .gallery,
+    .reservation {
+        padding: 60px 5%;
+    }
+
+    .about h2,
+    .menu h2,
+    .gallery h2,
+    .reservation h2 {
+        font-size: 30px;
+    }
+
+    /* Menu and Gallery */
+
+    .menu-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card .menu-image {
+        height: 230px;
+    }
+
+    .gallery-grid img {
+        height: 250px;
+    }
+
+    .menu-filters {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 9px 17px;
+    }
+
+    /* Reservation */
+
+    #reservation-form {
+        width: 100%;
+    }
+
+    .date-time-field input[type="date"],
+    .date-time-field input[type="time"] {
+        min-height: 54px;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .date-time-field span {
+        font-size: 14px;
+    }
+}
